@@ -1,0 +1,256 @@
+.main {
+  background: url(/assets/img/BG-main.jpg) no-repeat center center / cover;
+}
+
+.main__container {
+  padding-top: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.main__info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  text-align: center;
+
+  &-title {
+    font-weight: 900px;
+    font-size: 36px;
+    text-transform: uppercase;
+    color: $text;
+    transition: 0.3s;
+
+    &:hover {
+      color: $color-accent;
+    }
+  }
+
+  &-text {
+    font-weight: 400;
+    font-size: 18px;
+    color: $text-gray;
+  }
+}
+
+.main__steps {
+  padding-top: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+
+  &-item {
+    width: 209px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  &-title {
+    font-weight: 400;
+    font-size: 16px;
+    text-align: center;
+    color: $text;
+  }
+}
+
+.main__steps-pointer {
+  position: relative;
+  bottom: 50px;
+  left: 115px;
+}
+
+.main__form {
+  padding-top: 80px;
+  padding-bottom: 150px;
+  display: grid;
+  grid-template-columns: repeat(3, 370px);
+  grid-template-rows: repeat(3, 48px);
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  grid-template-areas:
+    "select email name"
+    "range  range file "
+    "submit submit submit";
+
+  &-select {
+    grid-area: select;
+  }
+
+  &-email {
+    grid-area: email;
+  }
+
+  &-name {
+    grid-area: name;
+  }
+
+  &-range {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: start;
+    align-items: end;
+    gap: 5px;
+    font-weight: 400;
+    font-size: 18px;
+    color: $text;
+    grid-area: range;
+
+    &-text {
+      position: relative;
+      bottom: 50px;
+      right: 450px;
+    }
+
+    &-line {
+      width: 770px;
+    }
+  }
+
+  &-file {
+    grid-area: file;
+
+    &-btn {
+      display: none;
+    }
+
+    &-text {
+      @include btn(
+        $color-accent,
+        $text,
+        3px,
+        $form-text,
+        15px,
+        12px,
+        12px,
+        600,
+        uppercase,
+        center
+      );
+      border: 2px solid $color-accent;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+  }
+
+  &-submit {
+    grid-area: submit;
+    grid-column: 2/3;
+  }
+}
+
+@media (max-width: 1200px) {
+  .main__container {
+    padding-top: 80px;
+  }
+
+  .main__steps {
+    padding-top: 60px;
+  }
+
+  .p-mail {
+    display: none;
+  }
+
+  .main__form {
+    grid-template-columns: repeat(2, 370px);
+    grid-template-rows: repeat(4, 48px);
+    grid-template-areas:
+      "select email"
+      "name file "
+      "range range"
+      "submit submit";
+  }
+
+  .main__form-submit {
+    grid-column: 1/3;
+  }
+}
+
+@media (max-width: 956px) {
+  .main__steps {
+    padding-top: 30px;
+  }
+
+  .p-doc {
+    display: none;
+  }
+
+  .p-mail {
+    display: block;
+  }
+}
+
+@media (max-width: 800px) {
+  .main__form {
+    grid-template-columns: repeat(1, 370px);
+    grid-template-rows: repeat(6, 48px);
+    grid-template-areas:
+      "select "
+      "email"
+      "name "
+      "range"
+      "file"
+      "submit";
+  }
+
+  .main__form-range-text {
+    right: 50px;
+  }
+
+  .main__form-range-line {
+    width: 370px;
+  }
+
+  .main__form-submit {
+    grid-column: 1/2;
+  }
+}
+
+@media (max-width: 717px) {
+  .p-percent {
+    display: none;
+  }
+
+  .p-doc {
+    display: block;
+  }
+
+  .p-mail {
+    display: none;
+  }
+}
+
+@media (max-width: 478px) {
+  .p-doc {
+    display: none;
+  }
+
+  .p-glass {
+    display: none;
+  }
+}
+
+@media (max-width: 400px) {
+  .main__form {
+    grid-template-columns: repeat(1, 280px);
+  }
+
+  .main__form-range-text {
+    font-size: 14px;
+    right: 30px;
+    text-align: center;
+  }
+
+  .main__form-range-line {
+    width: 280px;
+  }
+}

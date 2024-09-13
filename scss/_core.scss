@@ -1,0 +1,82 @@
+body {
+  font-family: "Lato", sans-serif;
+  background: #fff;
+}
+.container {
+  @include min-max(320px, 100%);
+}
+.wrap {
+  @include min-max(320px, 1170px);
+}
+p,
+a,
+button {
+  color: $text;
+  text-decoration: none;
+}
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.text-blue {
+  color: $color-accent;
+  transition: 0.3s;
+  &:hover {
+    color: $alt-text;
+  }
+}
+.text-blue-alt {
+  color: $color-accent;
+  transition: 0.3s;
+  &:hover {
+    color: $text;
+  }
+}
+.btn-form {
+  border: 1px solid $text;
+  border-radius: 3px;
+  padding: 10px;
+  background: $background-form;
+  font-weight: 400;
+  font-size: 18px;
+  color: $form-text;
+}
+.text-uppercase {
+  text-transform: uppercase;
+}
+.footer_flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btn {
+  @include btn(
+    $text,
+    $color-accent,
+    4px,
+    $text,
+    13px,
+    15px,
+    15px,
+    400,
+    uppercase,
+    center
+  );
+  transition: 0.3s;
+
+  &:hover {
+    @include btn(
+      #6f6d7b,
+      $text,
+      4px,
+      #2a2b30,
+      13px,
+      15px,
+      15px,
+      400,
+      uppercase,
+      center
+    );
+  }
+}

@@ -1,0 +1,18 @@
+@mixin min-max($min-width, $max-width) {
+  min-width: $min-width;
+  max-width: $max-width;
+  box-sizing: border-box;
+  margin: 0 auto;
+}
+@mixin btn ($bd-color,$bg-color,$bd-r,$color,$font-size,$p-top,$p-bottom,$font-w,$text-t,$text-a){
+  border: 1px solid $bd-color;
+  background-color: $bg-color;
+  border-radius: $bd-r;
+  color: $color;
+  font-size: $font-size;
+  padding: $p-top $p-bottom;
+  font-weight: $font-w;
+  text-transform: $text-t;
+  text-align: $text-a;
+  cursor: pointer;
+}
